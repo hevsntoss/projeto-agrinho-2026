@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,65 +7,79 @@
 <title>Agro Forte, Futuro Sustentável</title>
 
 <style>
+:root{
+    --verde-escuro:#1b4332;
+    --verde:#2d6a4f;
+    --verde-claro:#52b788;
+    --areia:#f8f9fa;
+    --texto:#2b2d42;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Segoe UI, sans-serif;
 }
 
 body{
-    background:#f4f7f3;
-    color:#333;
+    background:var(--areia);
+    color:var(--texto);
+    line-height:1.7;
 }
 
-header{
-    background:linear-gradient(135deg,#2e7d32,#66bb6a);
-    color:white;
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),
+    rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:80px 20px;
-}
-
-header h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-header p{
-    font-size:1.2rem;
-}
-
-nav{
-    background:#1b5e20;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
     color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+    padding:30px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
 }
 
 section{
-    padding:60px 10%;
+    padding:80px 10%;
 }
 
-.container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
-    justify-content:center;
+h2{
+    color:var(--verde-escuro);
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:30px;
 }
 
 .card{
     background:white;
-    width:320px;
-    padding:25px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
 .card:hover{
@@ -72,149 +87,212 @@ section{
 }
 
 .card h3{
-    color:#2e7d32;
+    color:var(--verde);
     margin-bottom:10px;
 }
 
-#contador{
+.banner{
+    background:var(--verde);
+    color:white;
     text-align:center;
-    background:#e8f5e9;
+    padding:70px 10%;
+}
+
+.banner h2{
+    color:white;
+}
+
+.indicadores{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+    text-align:center;
+}
+
+.indicador{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
 
 .numero{
-    font-size:4rem;
-    color:#2e7d32;
+    font-size:3rem;
     font-weight:bold;
+    color:var(--verde);
+}
+
+.timeline{
+    border-left:4px solid var(--verde);
+    padding-left:25px;
+    margin-top:20px;
+}
+
+.timeline div{
+    margin-bottom:25px;
 }
 
 button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    background:#2e7d32;
+    background:var(--verde);
     color:white;
-    border-radius:8px;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
     cursor:pointer;
+    margin-top:20px;
     font-size:1rem;
 }
 
 button:hover{
-    background:#1b5e20;
+    background:var(--verde-escuro);
 }
 
 footer{
-    background:#1b5e20;
+    background:var(--verde-escuro);
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 
-@media(max-width:768px){
-    header h1{
-        font-size:2rem;
-    }
-
-    .card{
-        width:100%;
-    }
+#mensagem{
+    margin-top:15px;
+    font-weight:bold;
 }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>🌱 Agro Forte, Futuro Sustentável</h1>
-    <p>Equilíbrio entre Produção e Meio Ambiente</p>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Agro Forte, Futuro Sustentável</h1>
+        <p>
+            Equilíbrio entre Produção e Meio Ambiente
+        </p>
+    </div>
 </header>
 
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#praticas">Práticas Sustentáveis</a>
-    <a href="#impacto">Impacto Positivo</a>
-</nav>
+<section>
+    <h2>🌱 O Desafio do Século</h2>
 
-<section id="sobre">
-    <h2 style="text-align:center;margin-bottom:30px;">
-        Agricultura e Sustentabilidade
-    </h2>
+    <p>
+        Alimentar uma população cada vez maior sem comprometer os recursos
+        naturais é um dos maiores desafios da atualidade. O agronegócio
+        moderno tem buscado soluções que permitam aumentar a produtividade
+        ao mesmo tempo em que preserva o solo, a água, a biodiversidade e
+        os ecossistemas que sustentam a vida.
+    </p>
 
-    <p style="text-align:center;font-size:1.1rem;">
-        O agronegócio moderno pode aumentar a produtividade e,
-        ao mesmo tempo, preservar os recursos naturais.
-        A tecnologia, o manejo responsável e a conservação ambiental
-        são fundamentais para garantir alimentos para as futuras gerações.
+    <p>
+        A sustentabilidade no campo deixou de ser apenas uma tendência e
+        passou a ser uma necessidade para garantir o desenvolvimento das
+        próximas gerações.
     </p>
 </section>
 
-<section id="praticas">
-    <h2 style="text-align:center;margin-bottom:40px;">
-        Práticas Sustentáveis
-    </h2>
+<section>
+    <h2>🚜 Práticas Sustentáveis no Campo</h2>
 
-    <div class="container">
+    <div class="cards">
 
         <div class="card">
             <h3>🌿 Preservação Ambiental</h3>
             <p>
-                Proteção de matas ciliares, recuperação de áreas degradadas
-                e conservação da biodiversidade.
+                Recuperação de áreas degradadas, proteção de nascentes,
+                matas ciliares e corredores ecológicos.
             </p>
         </div>
 
         <div class="card">
             <h3>💧 Uso Inteligente da Água</h3>
             <p>
-                Sistemas de irrigação eficientes reduzem desperdícios
-                e aumentam a produtividade.
+                Sistemas modernos de irrigação reduzem desperdícios e
+                aumentam a eficiência hídrica.
             </p>
         </div>
 
         <div class="card">
-            <h3>🚜 Tecnologia no Campo</h3>
+            <h3>🚜 Agricultura de Precisão</h3>
             <p>
-                Agricultura de precisão ajuda a utilizar menos recursos
-                e produzir mais com responsabilidade.
+                Sensores, drones e análise de dados ajudam a aplicar
+                insumos apenas onde são realmente necessários.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>♻️ Conservação do Solo</h3>
+            <p>
+                Técnicas como plantio direto e rotação de culturas
+                melhoram a fertilidade e reduzem a erosão.
             </p>
         </div>
 
     </div>
 </section>
 
-<section id="contador">
-    <h2>Árvores Preservadas pelo Projeto</h2>
-
-    <div class="numero" id="numero">0</div>
-
-    <button onclick="contarArvores()">
-        Simular Preservação
-    </button>
+<section class="banner">
+    <h2>Produzir Mais. Preservar Melhor.</h2>
+    <p>
+        A tecnologia e a responsabilidade ambiental caminham juntas para
+        construir um modelo agrícola mais eficiente e sustentável.
+    </p>
 </section>
 
-<section id="impacto">
-    <h2 style="text-align:center;margin-bottom:30px;">
-        Benefícios para o Futuro
-    </h2>
+<section>
+    <h2>📊 Indicadores de Sustentabilidade</h2>
 
-    <div class="container">
+    <div class="indicadores">
 
-        <div class="card">
-            <h3>🌎 Menor Impacto Ambiental</h3>
+        <div class="indicador">
+            <div id="arvores" class="numero">925</div>
+            <p>Árvores Preservadas</p>
+        </div>
+
+        <div class="indicador">
+            <div class="numero">78%</div>
+            <p>Redução do Desperdício de Água</p>
+        </div>
+
+        <div class="indicador">
+            <div class="numero">100%</div>
+            <p>Compromisso Ambiental</p>
+        </div>
+
+    </div>
+
+    <center>
+        <button onclick="simularProjeto()">
+            Simular Nova Ação Ambiental
+        </button>
+
+        <p id="mensagem"></p>
+    </center>
+</section>
+
+<section>
+    <h2>🌎 Impactos Positivos para o Futuro</h2>
+
+    <div class="timeline">
+
+        <div>
+            <h3>Hoje</h3>
             <p>
-                Redução da degradação do solo e preservação dos ecossistemas.
+                Adoção de tecnologias sustentáveis e gestão eficiente dos
+                recursos naturais.
             </p>
         </div>
 
-        <div class="card">
-            <h3>🍎 Segurança Alimentar</h3>
+        <div>
+            <h3>Próximos Anos</h3>
             <p>
-                Produção sustentável garante alimentos para uma população crescente.
+                Maior produtividade com menor impacto ambiental.
             </p>
         </div>
 
-        <div class="card">
-            <h3>💚 Desenvolvimento Sustentável</h3>
+        <div>
+            <h3>Futuras Gerações</h3>
             <p>
-                Crescimento econômico aliado à responsabilidade ambiental.
+                Segurança alimentar, biodiversidade preservada e
+                desenvolvimento econômico sustentável.
             </p>
         </div>
 
@@ -222,19 +300,28 @@ footer{
 </section>
 
 <footer>
+    <h3>Agro Forte, Futuro Sustentável</h3>
     <p>
-        Agro Forte, Futuro Sustentável © 2026
+        Produzir hoje com responsabilidade para colher um amanhã melhor.
     </p>
 </footer>
 
 <script>
-let valor = 0;
+function simularProjeto(){
 
-function contarArvores(){
-    valor += Math.floor(Math.random() * 100) + 50;
-    document.getElementById("numero").innerText = valor;
+    const aumento = Math.floor(Math.random() * 50) + 10;
+
+    const arvores = document.getElementById("arvores");
+
+    arvores.innerText =
+        parseInt(arvores.innerText) + aumento;
+
+    document.getElementById("mensagem").innerHTML =
+        `🌳 Projeto realizado com sucesso! 
+        Mais ${aumento} árvores foram preservadas.`;
 }
 </script>
 
 </body>
 </html>
+```
