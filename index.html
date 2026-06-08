@@ -1,1 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Forte, Futuro Sustentável</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7f3;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:1.2rem;
+}
+
+nav{
+    background:#1b5e20;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+section{
+    padding:60px 10%;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    width:320px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+#contador{
+    text-align:center;
+    background:#e8f5e9;
+}
+
+.numero{
+    font-size:4rem;
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    background:#2e7d32;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:2rem;
+    }
+
+    .card{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🌱 Agro Forte, Futuro Sustentável</h1>
+    <p>Equilíbrio entre Produção e Meio Ambiente</p>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#praticas">Práticas Sustentáveis</a>
+    <a href="#impacto">Impacto Positivo</a>
+</nav>
+
+<section id="sobre">
+    <h2 style="text-align:center;margin-bottom:30px;">
+        Agricultura e Sustentabilidade
+    </h2>
+
+    <p style="text-align:center;font-size:1.1rem;">
+        O agronegócio moderno pode aumentar a produtividade e,
+        ao mesmo tempo, preservar os recursos naturais.
+        A tecnologia, o manejo responsável e a conservação ambiental
+        são fundamentais para garantir alimentos para as futuras gerações.
+    </p>
+</section>
+
+<section id="praticas">
+    <h2 style="text-align:center;margin-bottom:40px;">
+        Práticas Sustentáveis
+    </h2>
+
+    <div class="container">
+
+        <div class="card">
+            <h3>🌿 Preservação Ambiental</h3>
+            <p>
+                Proteção de matas ciliares, recuperação de áreas degradadas
+                e conservação da biodiversidade.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💧 Uso Inteligente da Água</h3>
+            <p>
+                Sistemas de irrigação eficientes reduzem desperdícios
+                e aumentam a produtividade.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🚜 Tecnologia no Campo</h3>
+            <p>
+                Agricultura de precisão ajuda a utilizar menos recursos
+                e produzir mais com responsabilidade.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contador">
+    <h2>Árvores Preservadas pelo Projeto</h2>
+
+    <div class="numero" id="numero">0</div>
+
+    <button onclick="contarArvores()">
+        Simular Preservação
+    </button>
+</section>
+
+<section id="impacto">
+    <h2 style="text-align:center;margin-bottom:30px;">
+        Benefícios para o Futuro
+    </h2>
+
+    <div class="container">
+
+        <div class="card">
+            <h3>🌎 Menor Impacto Ambiental</h3>
+            <p>
+                Redução da degradação do solo e preservação dos ecossistemas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🍎 Segurança Alimentar</h3>
+            <p>
+                Produção sustentável garante alimentos para uma população crescente.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💚 Desenvolvimento Sustentável</h3>
+            <p>
+                Crescimento econômico aliado à responsabilidade ambiental.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>
+        Agro Forte, Futuro Sustentável © 2026
+    </p>
+</footer>
+
+<script>
+let valor = 0;
+
+function contarArvores(){
+    valor += Math.floor(Math.random() * 100) + 50;
+    document.getElementById("numero").innerText = valor;
+}
+</script>
+
+</body>
+</html>
